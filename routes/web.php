@@ -33,3 +33,11 @@ Route::resource('/servicios', 'ServicioController');
 
 Route::resource('/fases', 'FaseController');
 
+Route::get('/empleados/login', 'Auth\EmpleadoLoginController@showLoginForm')->name('empleado.login');
+
+Route::post('/empleados/login', 'Auth\AdminLoginController@login')->name('empleado.login.submit');
+
+Route::get('empleados/area', 'AdminController@index')->name('empleado.area');
+
+Route::resource('/empleados', 'EmpleadoController');
+
