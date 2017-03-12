@@ -4,10 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 
 class AdminLoginController extends Controller
 {
+    use AuthenticatesUsers;
+
+     protected $redirectTo = '/servicios';
     
     function __construct()
     {
@@ -29,7 +33,8 @@ class AdminLoginController extends Controller
         if(Auth::guard('admins')->attempt(['email' => $request->email,'password' => $request->password], $request->remember)){
             return redirect()->intended(route('admin.area'));
         }
-           return redirect()->back()->withInput($request->only('email','remember'));
+
+        return $this->sendFailedLoginResponse($request);
             
      }
 }

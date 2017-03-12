@@ -46,7 +46,7 @@
                 <li>Limpieza y calibrado de inyectores</li>
             </ul>
             <br> 
-            <img  class="espacio-imagen center-block" src="{{ asset('imagenes/imagen2.png') }}" alt="" width="452" height="301" >
+            <img  class="espacio-imagen center-block" src="{{ asset('img/imagen2.png') }}" alt="" width="452" height="301" >
              </div>
             <br>
           <div class="jumbotron"> 
@@ -58,7 +58,7 @@
                 <li>Toques de estacionamiento</li>
             </ul>
             <br>  
-            <img  class="espacio-imagen center-block" src="{{ asset('imagenes/imagen3.png') }}" alt="" width="467" height="346" >
+            <img  class="espacio-imagen center-block" src="{{ asset('img/imagen3.png') }}" alt="" width="467" height="346" >
                 </div>
             <br>
                 <div class="jumbotron"> 
@@ -74,7 +74,7 @@
                 <li>Afinación completa</li>
             </ul>
             <br>
-            <img  class="espacio-imagen center-block" src="{{ asset('imagenes/imagen4.png') }}" alt="" width="507" height="353" >           
+            <img  class="espacio-imagen center-block" src="{{ asset('img/imagen4.png') }}" alt="" width="507" height="353" >
         </div><br>
          <div class="jumbotron"> 
             <h3>Lubricación</h3>
@@ -84,7 +84,7 @@
                 <li>Cambio de aceite y filtros</li>
             </ul>
             <br>
-            <img  class="espacio-imagen center-block" src="{{ asset('imagenes/imagen5.png') }}" alt="" width="521" height="346" >           
+            <img  class="espacio-imagen center-block" src="{{ asset('img/imagen5.png') }}" alt="" width="521" height="346" >
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

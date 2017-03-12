@@ -37,9 +37,10 @@ class FaseController extends Controller
     
     public function index(Request $request)
     {
-        $fases = Fase::all();       
+        $fases = Fase::all();
+        $servicios = Servicio::all();
 
-        return view('fases.index', ['fases' => $fases]);
+        return view('fases.index', ['fases' => $fases],['servicios' => $servicios]);
     }
     
     public function show(Request $request, $id)

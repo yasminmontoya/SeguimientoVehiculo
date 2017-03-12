@@ -9,7 +9,7 @@ class PaginaController extends Controller
     
     public function inicio()
     {
-        return view("paginaWeb/inicio");
+        return view("index");
     }
     
     public function servicio()

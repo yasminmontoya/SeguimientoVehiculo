@@ -33,7 +33,7 @@
     <div class="container">
         <div class="jumbotron">            
             <p>Esta es la aplicación web presta el servicio de visualización en tiempo real de los procesos de revisión y reparación vehicular en un taller mecánico. La revisión vehicular es un proceso que nos permite saber si los vehículos en los que transitamos poseen las condiciones mecánicas óptimas para poder circular por las vías de nuestro país, también se prestan servicios de reparación y mantenimiento variado.</p><br>
-            <img  class="espacio-imagen center-block" src="{{ asset('imagenes/imagen1.png') }}" alt="" width="539" height="381" >
+            <img  class="espacio-imagen center-block" src="{{ asset('img/imagen1.png') }}" alt="" width="539" height="381" >
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
