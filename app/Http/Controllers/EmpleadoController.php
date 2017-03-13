@@ -8,6 +8,12 @@ use Session;
 
 class EmpleadoController extends Controller
 {
+     public function __construct()
+    {
+        $this->middleware('auth:admins');
+    }
+
+
     public function create(Request $request)
     {
         return view('empleados.create');
@@ -16,7 +22,7 @@ class EmpleadoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nombre'       => 'required | string | max:100',
+            'name'       => 'required | string | max:100',
             'apellidos'    => 'required | string | max:100',
             'telefono'     => 'required | string | max:100',
             'email'        => 'required| email',
@@ -80,7 +86,7 @@ class EmpleadoController extends Controller
         $empleado = Empleado::findOrFail($id);
 
          $this->validate($request, [
-            'nombre'       => 'required | string | max:100',
+            'name'       => 'required | string | max:100',
             'apellidos'    => 'required | string | max:100',
             'telefono'     => 'required | string | max:100',
             'email'        => 'required| email',

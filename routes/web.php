@@ -35,9 +35,9 @@ Route::resource('/fases', 'FaseController');
 
 Route::get('/empleados/login', 'Auth\EmpleadoLoginController@showLoginForm')->name('empleado.login');
 
-Route::post('/empleados/login', 'Auth\AdminLoginController@login')->name('empleado.login.submit');
+Route::post('/empleados/login', 'Auth\EmpleadoLoginController@login')->name('empleado.login.submit');
 
-Route::get('empleados/area', 'AdminController@index')->name('empleado.area');
+Route::get('empleados/area', 'PaginaEmpleadosController@area')->name('empleado.area');
 
 Route::resource('/empleados', 'EmpleadoController');
 

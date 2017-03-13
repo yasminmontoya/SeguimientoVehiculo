@@ -23,6 +23,11 @@ class RedirectIfAuthenticated
                     return redirect()->route('admin.area');
                 }
                 break;
+            case 'empleados':
+                if (Auth::guard($guard)->check()) {
+                    return redirect()->route('epleado.area');
+                }
+                break;
             default: 
                 if (Auth::guard($guard)->check()) {
                     return redirect('/home');

@@ -51,12 +51,21 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
-        
+
         'admins-api' => [
             'driver' => 'token',
-            'provider' => 'admins',
+            'provider' => 'users',
+        ],
+
+        'empleados' => [
+            'driver' => 'session',
+            'provider' => 'empleados',
         ],
         
+        'empleados-api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+        ],
     ],
 
     /*
@@ -85,6 +94,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Administrador::class,
+        ],
+
+        'empleados' => [
+            'driver' => 'eloquent',
+            'model' => App\Empleado::class,
         ],
 
         // 'users' => [
@@ -121,5 +135,11 @@ return [
             'expire' => 15,
         ],
     ],
+
+    'empleados' => [
+            'provider' => 'empleados',
+            'table' => 'password_resets',
+            'expire' => 15,
+        ],
 
 ];
