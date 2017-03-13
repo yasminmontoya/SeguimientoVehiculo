@@ -13,7 +13,7 @@
                     <hr>
                     @foreach($empleados as $empleado)
 
-                    <h3>{{ $empleado->nombre }} ({{ ($empleado->apellidos) }})</h3>
+                    <h3>{{ $empleado->name }} ({{ ($empleado->apellidos) }})</h3>
                     <p>
                         <a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-info">Ver empleado</a>
                         <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-primary">Editar empleado</a>
@@ -21,6 +21,8 @@
                     <hr>
 
                     @endforeach
+
+                    <a href="{{ route('admin.area') }}" class="btn btn-info">Volver</a>
                 </div>
             </div>
         </div>

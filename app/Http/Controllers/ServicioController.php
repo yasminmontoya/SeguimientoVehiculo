@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Servicio;
+use App\Fase;
 use Session;
 
 class ServicioController extends Controller
@@ -34,6 +35,7 @@ class ServicioController extends Controller
     public function index(Request $request)
     {
         $servicios = Servicio::all();
+        $fases = Fase::all();
 
         return view('servicios.index', ['servicios' => $servicios]);
     }
@@ -43,9 +45,10 @@ class ServicioController extends Controller
        
         try
         {
+            $fases = Fase::all();
             $servicio = Servicio::findOrFail($id);
         
-            return view('servicios.show')->withServicio($servicio);
+            return view('servicios.show',['fases' => $fases])->withServicio($servicio);
         }
             catch(ModelNotFoundException $e)
         {

@@ -10,8 +10,8 @@
                 <div class="panel-body">
                     You are logged in ADMIN!
                     <br><br>
-                    <a href="{{ route('servicios.index') }}" class="btn btn-info">Crear Servicio</a>
-                    <a href="{{ route('fases.index') }}" class="btn btn-info">Crear Fase</a>
+                    <a href="{{ route('servicios.index') }}" class="btn btn-info">Ver Servicios </a>
+                    <a href="{{ route('empleados.index') }}" class="btn btn-info">Ver empleados</a>
                 </div>
             </div>
         </div>

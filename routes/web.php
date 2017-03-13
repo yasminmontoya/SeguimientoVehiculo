@@ -41,3 +41,9 @@ Route::get('empleados/area', 'PaginaEmpleadosController@area')->name('empleado.a
 
 Route::resource('/empleados', 'EmpleadoController');
 
+Route::get('fases/create/servicio/{id}', 'FaseController@create')->name('fases.create');
+
+Route::get('fases/index/servicio/{id}', 'FaseController@index')->name('fases.index');
+
+
+

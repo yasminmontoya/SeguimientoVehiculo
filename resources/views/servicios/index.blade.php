@@ -1,21 +1,39 @@
-@extends('layouts.master')
+@extends('layouts.app')
 
 @section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
 
-<h1>Lista de servicios</h1>
-<p class="lead">Esta es la lista de los servicios disponibles</p>
-<h3><a href="/servicios/create">¿Añadir uno nuevo?</a></h3>
-<hr>
+                <div class="panel-body">
+                    <h1>Lista de servicios</h1>
+                    <p class="lead">Esta es la lista de los servicios disponibles</p>
+                    <h3><a href="/servicios/create">¿Añadir un nuevo servicio?</a></h3>
+                    <table class="table">
+                    <tr>
+                      <td><strong>Nombre</strong></td>
+                      <td><strong>Acción</strong></td>
+                    </tr>
+                    @foreach($servicios as $servicio)
+                    <tr>
+                      <td>{{ $servicio->nombre }}</td>
 
-@foreach($servicios as $servicio)
+                      <td>
+                          {!! Form::open(['method' => 'DELETE','route' => ['servicios.destroy', $servicio->id]])!!}
+                          <a href="{{ route('servicios.edit', $servicio->id) }}" class="btn btn-primary">Editar </a>
+                          <a href="{{ route('fases.index', $servicio->id ) }}" class="btn btn-warning">Ver Fases </a>
+                          {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+                          {!! Form::close() !!}
+                      </td>
+                    </tr>
+                        @endforeach
+                    </table>
 
-<h3>{{ $servicio->nombre }}</h3>
-<p>
-    <a href="{{ route('servicios.show', $servicio->id) }}" class="btn btn-info">Ver servicio</a>
-    <a href="{{ route('servicios.edit', $servicio->id) }}" class="btn btn-primary">Editar servicio</a>
-</p>
-<hr>
-
-@endforeach
-
+                    <a href="{{ route('admin.area') }}" class="btn btn-info">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @stop

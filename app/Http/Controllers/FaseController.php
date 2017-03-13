@@ -14,68 +14,61 @@ class FaseController extends Controller
          $this->middleware('auth:admins');
     }
     
-    public function create(Request $request)
+    public function create(Request $request,$id)
     {
-        $servicios = Servicio::all();
-        
-        return view('fases.create',['servicios' => $servicios]);
+           try
+        {
+            $servicio = Servicio::findOrFail($id);
+
+            return view('fases.create')->withServicio($servicio);
+        }
+            catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "El servicio con el id= $id no se pudo encontrar para ser editado!");
+
+            return redirect()->back();
+        }
+
     }
     
     public function store(Request $request)
     {
         $this->validate($request, [
             'nombre'      => 'required | string | max:60',
-            'servicio_id' => 'required | integer',
         ]);
         
         $input = $request->all();
 
         Fase::create($input);
 
-        return redirect('fases');
+        return redirect()->back();
     }
     
-    public function index(Request $request)
+    public function index(Request $request, $id)
     {
         $fases = Fase::all();
-        $servicios = Servicio::all();
-
-        return view('fases.index', ['fases' => $fases],['servicios' => $servicios]);
-    }
-    
-    public function show(Request $request, $id)
-    {
-       
-        try
-        {
-            $fase = Fase::findOrFail($id);
+        $servicio = Servicio::findOrFail($id);
         
-            return view('fases.show')->withFase($fase);
-        }
-            catch(ModelNotFoundException $e)
-        {
-            Session::flash('flash_message', "La fase con el id = $id no fue encontrado!");
-
-            return redirect()->back();
-        }
+        return view('fases.index', ['fases' => $fases])->withServicio($servicio);
     }
     
     public function edit(Request $request, $id)
     {
-            try
+           try
         {
             $fase = Fase::findOrFail($id);
-            
+
             $servicios = Servicio::all();
 
             return view('fases.edit',['servicios' => $servicios])->withFase($fase);
         }
             catch(ModelNotFoundException $e)
         {
-            Session::flash('flash_message', "La fase con el id= $id no se pudo encontrar para ser editado!");
+            Session::flash('flash_message', "El servicio con el id= $id no se pudo encontrar para ser editado!");
 
             return redirect()->back();
         }
+
     }
     
      public function update(Request $request, $id)
@@ -86,7 +79,6 @@ class FaseController extends Controller
 
         $this->validate($request, [
             'nombre'      => 'required | string |max:60',
-            'servicio_id' => 'required | integer',
         ]);
 
         $input = $request->all();
@@ -95,7 +87,7 @@ class FaseController extends Controller
 
         Session::flash('flash_message', 'La fase se ha actualizado exitosamente!');
 
-        return redirect('fases');
+        return redirect()->back();;
       }
         catch(ModelNotFoundException $e)
       {
@@ -115,7 +107,7 @@ class FaseController extends Controller
 
             Session::flash('flash_message', 'La fase se ha eliminado exitosamente!');
 
-            return redirect('fases');
+            return redirect()->back();
         }
             catch(ModelNotFoundException $e)
         {

@@ -15,7 +15,7 @@
                       </tr>
                       <tr>
                         <td>Nombre</td>
-                        <td>{{ $empleado->nombre }}</td>
+                        <td>{{ $empleado->name }}</td>
                       </tr>
                     <tr>
                       <td>Apellidos</td>
