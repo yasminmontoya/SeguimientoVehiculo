@@ -39,11 +39,21 @@ Route::post('/empleados/login', 'Auth\EmpleadoLoginController@login')->name('emp
 
 Route::get('empleados/area', 'PaginaEmpleadosController@area')->name('empleado.area');
 
+Route::get('empleados/area2/{id}', 'PaginaEmpleadosController@area2')->name('empleado.area2');
+
+Route::post('empleados/area3/{id}', 'PaginaEmpleadosController@area3')->name('empleado.area3');
+
 Route::resource('/empleados', 'EmpleadoController');
 
 Route::get('fases/create/servicio/{id}', 'FaseController@create')->name('fases.create');
 
 Route::get('fases/index/servicio/{id}', 'FaseController@index')->name('fases.index');
+
+Route::resource('/mantenimientos', 'MantenimientoController');
+
+Route::get('/mantenimientos/vehiculo/{id}', 'MantenimientoController@index')->name('mantenimientos.index');
+
+Route::get('/mantenimientos/create/vehiculo/{id}', 'MantenimientoController@create')->name('mantenimientos.create');
 
 
 

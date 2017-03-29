@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use App\Vehiculo;
+use App\Servicio;
+use App\Fase;
+use App\Mantenimiento;
 
 class PaginaEmpleadosController extends Controller
 {
@@ -16,8 +21,29 @@ class PaginaEmpleadosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function area()
+    public function area(Request $request)
     {
-        return view('paginaEmpleados/area');
+        $vehiculos = Vehiculo::all();
+        return view('paginaEmpleados/area', ['vehiculos' => $vehiculos]);
     }
+
+    public function area2(Request $request,$id)
+    {
+        $servicios = Servicio::all();
+        $fases = Fase::all();
+        $vehiculo = Vehiculo::findOrFail($id);
+
+        return view('paginaEmpleados/area2', ['servicios' => $servicios],['fases' => $fases])->withVehiculo($vehiculo);
+    }
+
+    public function area3(Request $request,$id)
+    {
+        $datos = Input::get('fase');
+        $fases = Fase::all();
+        $vehiculo = Vehiculo::findOrFail($id);
+
+        return view('paginaEmpleados/area3',['datos' => $datos],['fases' => $fases])->withVehiculo($vehiculo);
+    }
+
 }
+

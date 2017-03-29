@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Empleado;
 use Session;
+use Illuminate\Support\Facades\Crypt;
 
 class EmpleadoController extends Controller
 {
@@ -22,17 +23,26 @@ class EmpleadoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'       => 'required | string | max:100',
+            'name'         => 'required | string | max:100',
             'apellidos'    => 'required | string | max:100',
             'telefono'     => 'required | string | max:100',
             'email'        => 'required| email',
             'password'     => 'required | min:6',
         ]);
 
+        $empleado = new Empleado();
 
-        $input = $request->all();
+        $empleado->fill([
+            'name'         => $request->name,
+            'apellidos'    => $request->apellidos,
+            'telefono'     => $request->telefono,
+            'email'        => $request->email,
+            'password'     => bcrypt($request->password),
+        ])->save();
 
-        Empleado::create($input);
+        //$input = $request->all();
+
+        //Empleado::create($input);
 
         return redirect('empleados');
     }
@@ -93,9 +103,13 @@ class EmpleadoController extends Controller
             'password'     => 'required | min:6',
         ]);
 
-        $input = $request->all();
-
-        $empleado->fill($input)->save();
+        $empleado->fill([
+            'name'         => $request->name,
+            'apellidos'    => $request->apellidos,
+            'telefono'     => $request->telefono,
+            'email'        => $request->email,
+            'password'     => bcrypt($request->password),
+        ])->save();
 
         Session::flash('flash_message', 'El empleado se ha actualizado exitosamente!');
 

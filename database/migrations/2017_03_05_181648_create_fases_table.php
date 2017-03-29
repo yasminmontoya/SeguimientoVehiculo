@@ -16,8 +16,7 @@ class CreateFasesTable extends Migration
         Schema::create('fases', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',60);
-            //$table->time('hora_inicio');
-            //$table->time('hora_fin');
+            $table->enum('estado', ['terminado', 'en curso', 'sin realizar'])->default("sin realizar");
             $table->unsignedInteger('servicio_id');
             $table->foreign('servicio_id')->references('id')->on('servicios');
             $table->timestamps();

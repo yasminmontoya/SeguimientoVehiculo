@@ -5,10 +5,21 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Empleado Dashboard</div>
-
                 <div class="panel-body">
-                    You are logged in Empleado !
+                   <h1>Lista de vehiculos</h1>
+                    <p class="lead">Esta es la lista de los vehiculos</p>
+                    <hr>
+
+
+                    @foreach($vehiculos as $vehiculo)
+
+                    <h3>{{ $vehiculo->placa }} ({{ ($vehiculo->marca) }})</h3>
+                    <p>
+                        <a href="{{ route( 'mantenimientos.index' , $vehiculo->id) }}" class="btn btn-info">Ver Mantenimientos</a>
+                    </p>
+                    <hr>
+
+                    @endforeach
                 </div>
             </div>
         </div>

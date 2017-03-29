@@ -25,7 +25,7 @@ class RedirectIfAuthenticated
                 break;
             case 'empleados':
                 if (Auth::guard($guard)->check()) {
-                    return redirect()->route('epleado.area');
+                    return redirect()->route('empleado.area');
                 }
                 break;
             default: 

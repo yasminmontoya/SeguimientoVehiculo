@@ -50,7 +50,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">Seguimiento Vehicular</a>
+                <a class="navbar-brand" href="#page-top">Seguimiento Vehiculo</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,7 +72,10 @@
                         <a href="{{ route('login')}}">Login</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.login')}}">Administrar</a>
+                        <a href="{{ route('admin.login')}}">Admin</a>
+                    </li>
+                     <li>
+                        <a href="{{ route('empleado.login')}}">Empleado</a>
                     </li>
                 </ul>
             </div>
@@ -185,7 +188,7 @@
                 </div>
             </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p>Esta es la aplicación web presta el servicio de visualización en tiempo real de los procesos de revisión y reparación vehicular en un taller mecánico.La revisión vehicular es un proceso que nos permite saber si los vehículos en los que transitamos poseen las condiciones mecánicas óptimas para poder circular por las vías de nuestro país, también se prestan servicios de reparación y mantenimiento variado.</p>
+                    <p>Esta es la aplicación web que presta el servicio de visualización en tiempo real de los procesos de revisión y reparación vehicular en un taller mecánico.Nos enfocamos en ello debido a que la revisión vehicular es un proceso importante ya que nos permite saber si los vehículos en los que transitamos poseen las condiciones mecánicas óptimas para poder circular por las vías de nuestro país, también se prestan servicios de reparación y mantenimiento variado.</p>
                 </div>
             </div>
     </section>
