@@ -32,18 +32,17 @@
                     </table>
 
                     <hr>
-
-                    <a href="{{ route('vehiculos.index') }}" class="btn btn-info">Volver</a>
-                    <a href="{{ route('vehiculos.edit', $vehiculo->id) }}" class="btn btn-primary">Editar</a>
-                    <br>
-                    <br>
-
                     {!! Form::open([
                         'method' => 'DELETE',
                         'route' => ['vehiculos.destroy', $vehiculo->id]
                     ]) !!}
-                        {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+
+
+                    <a href="{{ route('vehiculos.edit', $vehiculo->id) }}" class="btn btn-primary">Editar</a>
+                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                     {!! Form::close() !!}
+                    <br>
+                    <a href="{{ route('vehiculos.index') }}" class="btn btn-info">Volver</a>
 
                 
                 </div>

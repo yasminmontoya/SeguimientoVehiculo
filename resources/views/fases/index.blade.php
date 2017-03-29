@@ -7,8 +7,8 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <h1>{{$servicio->nombre}}</h1>
-                    <p class="lead">Esta es la lista de las fases creadas del  servicio </p>
-                    <h3><a href="{{ route('fases.create', $servicio->id ) }}">¿Añadir un nueva fase?</a></h3>
+                    <p class="lead">Esta es la lista de los servicios de esta área </p>
+                    <h3><a href="{{ route('fases.create', $servicio->id ) }}">¿Añadir un nuevo servicio?</a></h3>
 
                     <table class="table">
                     <tr>

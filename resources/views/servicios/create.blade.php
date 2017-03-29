@@ -6,8 +6,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h1>Añadir Servicio</h1>
-                    <p class="lead">Crear un nuevo servicio</p>
+                    <h1>Añadir área</h1>
+                    <p class="lead">Crear un nueva área</p>
                     <hr>
 
                     @if($errors->any())

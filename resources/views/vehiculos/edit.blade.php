@@ -43,12 +43,16 @@
                             {!! Form::label('modelo', 'Modelo', ['class' => 'control-label']) !!}
                             {!! Form::text('modelo', null, ['class' => 'form-control']) !!}
 
-                        <br><br>
+                      <br>
                         
                         {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
 
                         {!! Form::close() !!}
-                       <a href="{{ route('vehiculos.show', $vehiculo->id) }}" class="btn btn-info">Volver</a>
+
+                        <br><br>
+
+                        <a href="{{ route('vehiculos.index') }}" class="btn btn-info">Volver</a>
+
                 </div>
             </div>
         </div>

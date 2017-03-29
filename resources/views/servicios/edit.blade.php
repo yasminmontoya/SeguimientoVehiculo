@@ -7,7 +7,7 @@
             <div class="panel panel-default">
 
                 <div class="panel-body">
-                    <h1>Editar Servicio </h1>
+                    <h1>Editar área</h1>
                     <hr>
 
                     @if($errors->any())
