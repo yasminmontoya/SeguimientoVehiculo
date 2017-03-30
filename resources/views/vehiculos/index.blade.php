@@ -17,6 +17,7 @@
                     <p>
                         <a href="{{ route('vehiculos.show', $vehiculo->id) }}" class="btn btn-info">Ver vehículo</a>
                         <a href="{{ route('vehiculos.edit', $vehiculo->id) }}" class="btn btn-primary">Editar vehículo</a>
+                        <a href="{{ route('mantenimientos.show', $vehiculo->id) }}" class="btn btn-primary">Ver procesos</a>
                     </p>
                     <hr>
                     @endcan

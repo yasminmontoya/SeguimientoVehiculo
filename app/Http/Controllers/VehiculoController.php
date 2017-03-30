@@ -38,7 +38,7 @@ class VehiculoController extends Controller
         return redirect('vehiculos');
     }
     
-    public function index(Request $request,Vehiculo $vehiculo)
+    public function index(Request $request)
     {
         
         $vehiculos = Vehiculo::all();

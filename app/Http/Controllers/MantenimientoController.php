@@ -51,9 +51,11 @@ class MantenimientoController extends Controller
 
         try
         {
-            $mantenimiento = Mantenimiento::findOrFail($id);
+            $vehiculo = Vehiculo::findOrFail($id);
 
-            return view('mantenimientos.show')->withMantenimiento($mantenimiento);
+            $mantenimientos = Mantenimiento::all();
+
+            return view('mantenimientos.show',['mantenimientos' => $mantenimientos])->withVehiculo($vehiculo);
         }
             catch(ModelNotFoundException $e)
         {
