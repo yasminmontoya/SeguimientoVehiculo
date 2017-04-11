@@ -37,16 +37,21 @@ class FaseController extends Controller
             'nombre'      => 'required | string | max:60',
         ]);
         
+        $servicio_id = $request->input("servicio_id");
+
         $input = $request->all();
 
         Fase::create($input);
 
-        return redirect()->back();
+        $fases = Fase::all();
+
+        return redirect('fases/index/servicio/'.$servicio_id);
     }
     
     public function index(Request $request, $id)
     {
-        $fases = Fase::all();
+         $fases = Fase::all();
+
         $servicio = Servicio::findOrFail($id);
         
         return view('fases.index', ['fases' => $fases])->withServicio($servicio);
@@ -66,7 +71,7 @@ class FaseController extends Controller
         {
             Session::flash('flash_message', "El servicio con el id= $id no se pudo encontrar para ser editado!");
 
-            return redirect()->back();
+            return redirect('fases/'.$id .'/edit');
         }
 
     }
@@ -85,15 +90,17 @@ class FaseController extends Controller
 
         $fase->fill($input)->save();
 
+        $servicio_id = $request->input("servicio_id");
+
         Session::flash('flash_message', 'La fase se ha actualizado exitosamente!');
 
-        return redirect()->back();;
+        return redirect('fases/index/servicio/'.$servicio_id);
       }
         catch(ModelNotFoundException $e)
       {
         Session::flash('flash_message', "La fase con el id= $id no se pudo encontrar para ser editado!");
 
-        return redirect()->back();
+        return redirect('fases/index/servicio/'.$servicio_id);
       }
     }
     
