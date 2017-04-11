@@ -10,17 +10,29 @@
                     <h1>Lista de empleados</h1>
                     <p class="lead">Esta es la lista de sus empleados</p>
                     <h3><a href="/empleados/create">¿Añadir uno nuevo?</a></h3>
-                    <hr>
+                    <table class="table">
+                    <tr>
+                      <td><strong>Nombre</strong></td>
+                      <td><strong>Apellidos</strong></td>
+                      <td><strong>Acción</strong></td>
+                    </tr>
                     @foreach($empleados as $empleado)
-
-                    <h3>{{ $empleado->name }} ({{ ($empleado->apellidos) }})</h3>
-                    <p>
-                        <a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-primary">Ver empleado</a>
-                    </p>
+                    <tr>
+                        <td>{{ $empleado->name }} </td>
+                        <td>{{ ($empleado->apellidos) }}</td>
+                      <td>
+                       {!! Form::open([
+                        'method' => 'DELETE',
+                        'route' => ['empleados.destroy', $empleado->id]
+                        ]) !!}
+                        <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-primary">Editar</a>
+                        {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+                        {!! Form::close() !!}
+                      </td>
+                    </tr>
+                        @endforeach
+                    </table>
                     <hr>
-
-                    @endforeach
-
                     <a href="{{ route('admin.area') }}" class="btn btn-info">Volver</a>
                 </div>
             </div>

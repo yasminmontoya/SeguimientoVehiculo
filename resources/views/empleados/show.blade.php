@@ -32,16 +32,7 @@
                     </table>
 
                     <hr>
-                     {!! Form::open([
-                        'method' => 'DELETE',
-                        'route' => ['empleados.destroy', $empleado->id]
-                    ]) !!}
                     <a href="{{ route('empleados.index') }}" class="btn btn-info">Volver</a>
-                    <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-primary">Editar</a>
-                        {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
-                    {!! Form::close() !!}
-
-
                 </div>
             </div>
         </div>
