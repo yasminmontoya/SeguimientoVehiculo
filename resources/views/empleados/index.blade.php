@@ -15,8 +15,7 @@
 
                     <h3>{{ $empleado->name }} ({{ ($empleado->apellidos) }})</h3>
                     <p>
-                        <a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-info">Ver empleado</a>
-                        <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-primary">Editar empleado</a>
+                        <a href="{{ route('empleados.show', $empleado->id) }}" class="btn btn-primary">Ver empleado</a>
                     </p>
                     <hr>
 
