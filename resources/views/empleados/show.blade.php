@@ -30,8 +30,6 @@
                       <td>{{ $empleado->email }}</td>
                     </tr>
                     </table>
-
-                    <hr>
                     <a href="{{ route('empleados.index') }}" class="btn btn-info">Volver</a>
                 </div>
             </div>

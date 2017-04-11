@@ -32,7 +32,6 @@
                     </tr>
                         @endforeach
                     </table>
-                    <hr>
                     <a href="{{ route('admin.area') }}" class="btn btn-info">Volver</a>
                 </div>
             </div>
