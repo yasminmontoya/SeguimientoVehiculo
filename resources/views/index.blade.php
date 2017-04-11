@@ -63,13 +63,13 @@
                         <a href="#portfolio">Servicios</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">Acerca de Nosotros</a>
+                        <a href="#about">Nosotros</a>
                     </li>
                     <li class="page-scroll">
                         <a href="#contact">Contáctenos</a>
                     </li>
                     <li>
-                        <a href="{{ route('login')}}">Login</a>
+                        <a href="{{ route('login')}}">Usuario</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.login')}}">Admin</a>
@@ -114,27 +114,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
+
+                <div class="col-sm-6 portfolio-item">
+                    <h3  class="text-center" >Revisión Técnico Mecánica</h3>
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/imagen1.png" class="img-responsive" alt="Cabin">
+
+                        <img src="img/imagen2.png" class="img-responsive" alt="Cabin">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/imagen2.png" class="img-responsive" alt="Slice of cake">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-sm-6 portfolio-item">
+                    <h3  class="text-center">Chapa Y Pintura</h3>
                     <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -144,7 +138,8 @@
                         <img src="img/imagen3.png" class="img-responsive" alt="Circus tent">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-sm-6 portfolio-item">
+                    <h3  class="text-center">Electricidad del automotor</h3>
                     <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -154,7 +149,8 @@
                         <img src="img/imagen4.png" class="img-responsive" alt="Game controller">
                     </a>
                 </div>
-                <div class="col-sm-4 portfolio-item">
+                <div class="col-sm-6 portfolio-item">
+                    <h3  class="text-center">Lubricación</h3>
                     <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -162,16 +158,6 @@
                             </div>
                         </div>
                         <img src="img/imagen5.png" class="img-responsive" alt="Safe">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/imagen6.png" class="img-responsive" alt="Submarine">
                     </a>
                 </div>
             </div>
@@ -319,7 +305,7 @@
                         <div class="modal-body">
                             <h2>Revisión Técnico Mecánica</h2>
                             <br><br>
-                            <img src="img/imagen1.png" class="img-responsive img-centered " alt="">
+                            <img src="img/imagen2.png" class="img-responsive img-centered " alt="">
                                 <ul>
                                     <li>Inyección electrónica y mecánica</li>
                                     <li>Reparación y carga de aire acondicionado</li>
