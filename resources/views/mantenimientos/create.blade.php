@@ -20,14 +20,21 @@
 
                         {!! Form::open(['route' => 'mantenimientos.store']) !!}
 
-                        <div class="dropdown" >
-                           <select class="form-control" name="fase_nombre">
-                               @foreach($fases as $fase)
-                                <option value="{{$fase->nombre}}">{{$fase->nombre}}
-                               </option>
+                        <div class="form-group">
+                            <select class="form-control" id="servicio_id" name="servicio_id">
+                                <option value="">Seleccione el área</option>
+                                @foreach($servicios as $servicio)
+                                <option value="{{$servicio->id}}">{{$servicio->nombre}}</option>
                                 @endforeach
-                           </select>
+                            </select>
                         </div>
+
+                        <div class="form-group">
+                            <select class="form-control" id="fase_id" name="fase_nombre">
+                                <option value="">Seleccione el área primero</option>
+                            </select>
+                        </div>
+
 
                         <input type="hidden" name="fase_estado" value="sin realizar">
 
@@ -44,4 +51,19 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#servicio_id').on('change',function(){
+        console.log($(this).val());
+        $.get("{{ url('dropdown')}}",{ option: $(this).val() },function(data) {
+            $('#fase_id').empty();
+            $.each(data, function(index, faseObj) {
+                $('#fase_id').append("<option value='" + faseObj.nombre + "'>" + faseObj.nombre + "</option>");
+            });
+        });
+    });
+});
+</script>
 @stop
+

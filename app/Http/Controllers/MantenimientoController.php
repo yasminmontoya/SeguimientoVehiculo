@@ -3,37 +3,48 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Mantenimiento;
 use App\Fase;
 use App\Servicio;
 use App\Vehiculo;
 use Session;
+use Response;
 
 class MantenimientoController extends Controller
 {
-    public function create(Request $request, $id)
+    public function __construct()
     {
-        $vehiculo = Vehiculo::findOrFail($id);
-        $fases = Fase::all();
+         $this->middleware('auth:empleados');
+    }
 
-        return view('mantenimientos.create',['fases' => $fases])->withVehiculo($vehiculo);
+    public function create(Request $request, $vehiculo_id)
+    {
+        $vehiculo = Vehiculo::findOrFail($vehiculo_id);
+        $servicios = Servicio::all();
+
+        return view('mantenimientos.create',['servicios' => $servicios])->withVehiculo($vehiculo);
     }
 
     public function store(Request $request)
     {
-
         $this->validate($request, [
             'fase_nombre'   => 'required | string | max:60',
             'fase_estado'   => 'required | string | in:terminado,en curso,sin realizar',
             'vehiculo_id'   => 'required | integer',
         ]);
 
+        $mantenimiento = new Mantenimiento();
 
-        $input = $request->all();
+        $mantenimiento->fill([
+            'fase_nombre'    => $request->fase_nombre,
+            'fase_estado'    => $request->fase_estado,
+            'vehiculo_id'    => $request->vehiculo_id,
+        ])->save();
 
-        Mantenimiento::create($input);
+        $servicio_id= $request->vehiculo_id;
 
-        return  redirect()->back();
+        return  redirect('/mantenimientos/vehiculo/'.$servicio_id);
     }
 
     public function index(Request $request, $id)
@@ -130,4 +141,9 @@ class MantenimientoController extends Controller
         }
     }
 
+    public function select(){
+        $id = Input::get('option');
+        $fases = Fase::where('servicio_id','=',$id)->get();
+        return Response::json($fases);
+    }
 }

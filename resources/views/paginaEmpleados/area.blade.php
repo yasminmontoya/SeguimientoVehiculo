@@ -15,7 +15,7 @@
 
                     <h3>{{ $vehiculo->placa }} ({{ ($vehiculo->marca) }})</h3>
                     <p>
-                        <a href="{{ route( 'mantenimientos.index' , $vehiculo->id) }}" class="btn btn-info">Ver Mantenimientos</a>
+                        <a href="{{ route( 'mantenimientos.index' , $vehiculo->id) }}" class="btn btn-primary">Ver Mantenimientos</a>
                     </p>
                     <hr>
 

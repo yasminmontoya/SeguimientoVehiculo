@@ -9,6 +9,7 @@
                 <div class="panel-body">
                     <h1>Lista de Mantenimientos</h1>
                     <p class="lead">Esta es la lista de los mantenimientos asignados al vehiculo</p>
+                    <h3>{{$vehiculo->placa}} ({{$vehiculo->marca}})</h3>
                     <h3><a href="{{ route('mantenimientos.create', $vehiculo->id) }}">¿Añadir un nuevo mantenimiento?</a></h3>
 
                     <table class="table">

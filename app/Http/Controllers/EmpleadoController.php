@@ -40,10 +40,6 @@ class EmpleadoController extends Controller
             'password'     => bcrypt($request->password),
         ])->save();
 
-        //$input = $request->all();
-
-        //Empleado::create($input);
-
         return redirect('empleados');
     }
 

@@ -15,7 +15,7 @@ class CreateMantenimientosTable extends Migration
     {
         Schema::create('mantenimientos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('fase_nombre',60);
+            $table->integer('fase_nombre');
             $table->enum('fase_estado', ['terminado', 'en curso', 'sin realizar'])->default("sin realizar");
             $table->integer('vehiculo_id');
             $table->foreign('fase_nombre')->references('nombre')->on('fases');

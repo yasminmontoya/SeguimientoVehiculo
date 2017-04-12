@@ -44,7 +44,7 @@
 
                     <br><br>
 
-                    <a href="{{ route('mantenimientos.index', $mantenimiento->vehiculo_id ) }}" class="btn btn-info">Volver</a>
+                    <a href="{{ route('mantenimientos.index', $mantenimiento->vehiculo_id) }}" class="btn btn-info">Volver</a>
 
                     {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
 

@@ -55,5 +55,4 @@ Route::get('/mantenimientos/vehiculo/{id}', 'MantenimientoController@index')->na
 
 Route::get('/mantenimientos/create/vehiculo/{id}', 'MantenimientoController@create')->name('mantenimientos.create');
 
-
-
+Route::get('/dropdown','MantenimientoController@select');
