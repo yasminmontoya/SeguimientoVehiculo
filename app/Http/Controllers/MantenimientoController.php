@@ -57,25 +57,6 @@ class MantenimientoController extends Controller
 
     }
 
-    public function show(Request $request, $id)
-    {
-
-        try
-        {
-            $vehiculo = Vehiculo::findOrFail($id);
-
-            $mantenimientos = Mantenimiento::all();
-
-            return view('mantenimientos.show',['mantenimientos' => $mantenimientos])->withVehiculo($vehiculo);
-        }
-            catch(ModelNotFoundException $e)
-        {
-            Session::flash('flash_message', "El vehiculo con el id = $id no fue encontrado!");
-
-            return redirect()->back();
-        }
-    }
-
     public function edit(Request $request, $id)
     {
             try

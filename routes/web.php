@@ -51,8 +51,10 @@ Route::get('fases/index/servicio/{id}', 'FaseController@index')->name('fases.ind
 
 Route::resource('/mantenimientos', 'MantenimientoController');
 
-Route::get('/mantenimientos/vehiculo/{id}', 'MantenimientoController@index')->name('mantenimientos.index');
+Route::get('empleados/mantenimientos/vehiculo/{id}', 'MantenimientoController@index')->name('mantenimientos.index');
 
-Route::get('/mantenimientos/create/vehiculo/{id}', 'MantenimientoController@create')->name('mantenimientos.create');
+Route::get('empleados/mantenimientos/create/vehiculo/{id}', 'MantenimientoController@create')->name('mantenimientos.create');
 
 Route::get('/dropdown','MantenimientoController@select');
+
+Route::get('/mantenimientos/vehiculo/{id}', 'VehiculoController@showMantenimientos')->name('vehiculos.showMantenimientos');

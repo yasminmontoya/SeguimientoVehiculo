@@ -7,6 +7,7 @@ use App\Vehiculo;
 use Session;
 use App\Http\Controllers\Gate;
 use App\User;
+use App\Mantenimiento;
 
 class VehiculoController extends Controller
 {
@@ -124,6 +125,24 @@ class VehiculoController extends Controller
             catch(ModelNotFoundException $e)
         {
             Session::flash('flash_message', "El vehiculo con el id= $id no se pudo encontrar para ser eliminado!");
+
+            return redirect()->back();
+        }
+    }
+
+    public function showMantenimientos(Request $request, $id)
+    {
+         try
+        {
+            $vehiculo = Vehiculo::findOrFail($id);
+
+            $mantenimientos = Mantenimiento::all();
+
+            return view('vehiculos.showMantenimientos',['mantenimientos' => $mantenimientos])->withVehiculo($vehiculo);
+        }
+            catch(ModelNotFoundException $e)
+        {
+            Session::flash('flash_message', "El vehiculo con el id = $id no fue encontrado!");
 
             return redirect()->back();
         }
