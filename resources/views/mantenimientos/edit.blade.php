@@ -34,9 +34,9 @@
 
                     <div class="dropdown" >
                            <select class="form-control" name="fase_estado">
-                                <option value="sin realizar">Sin realizar</option>
-                                <option value="en curso">En curso</option>
-                                <option value="terminado">Terminado</option>
+                                <option value="sin realizar">sin realizar</option>
+                                <option value="en curso">en curso</option>
+                                <option value="terminado">terminado</option>
                            </select>
                     </div>
 

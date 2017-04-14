@@ -34,17 +34,13 @@ class MantenimientoController extends Controller
             'vehiculo_id'   => 'required | integer',
         ]);
 
-        $mantenimiento = new Mantenimiento();
+        $input = $request->all();
 
-        $mantenimiento->fill([
-            'fase_nombre'    => $request->fase_nombre,
-            'fase_estado'    => $request->fase_estado,
-            'vehiculo_id'    => $request->vehiculo_id,
-        ])->save();
+        Mantenimiento::create($input);
 
         $servicio_id= $request->vehiculo_id;
 
-        return  redirect('/mantenimientos/vehiculo/'.$servicio_id);
+        return  redirect('empleados/mantenimientos/vehiculo/'.$servicio_id);
     }
 
     public function index(Request $request, $id)
@@ -90,9 +86,11 @@ class MantenimientoController extends Controller
 
         $mantenimiento->fill($input)->save();
 
+        $servicio_id= $request->vehiculo_id;
+
         Session::flash('flash_message', 'El vehiculo se ha actualizado exitosamente!');
 
-        return  redirect()->back();
+        return redirect('empleados/mantenimientos/vehiculo/'.$servicio_id);
       }
         catch(ModelNotFoundException $e)
       {
