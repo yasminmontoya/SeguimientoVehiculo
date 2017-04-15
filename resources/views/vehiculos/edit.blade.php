@@ -44,14 +44,12 @@
                             {!! Form::text('modelo', null, ['class' => 'form-control']) !!}
 
                       <br>
+
+                         <a href="{{ route('vehiculos.index') }}" class="btn btn-info">Volver</a>
                         
                         {!! Form::submit('Actualizar', ['class' => 'btn btn-primary']) !!}
 
                         {!! Form::close() !!}
-
-                        <br><br>
-
-                        <a href="{{ route('vehiculos.index') }}" class="btn btn-info">Volver</a>
 
                 </div>
             </div>

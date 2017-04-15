@@ -25,7 +25,7 @@
                       <td>{{ $mantenimiento->fase_estado }}</td>
                       <td>
                           {!! Form::open(['method' => 'DELETE','route' => ['mantenimientos.destroy', $mantenimiento->id]]) !!}
-                          <a href="{{ route('mantenimientos.edit', $mantenimiento->id ) }}" class="btn btn-primary">Editar </a>
+                          <a href="{{ route('mantenimientos.edit', $mantenimiento->id ) }}" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Editar </a>
                           {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                           {!! Form::close() !!}
                       </td>

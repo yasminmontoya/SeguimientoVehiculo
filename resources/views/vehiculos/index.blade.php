@@ -10,18 +10,28 @@
                     <h1>Lista de vehiculos</h1>
                     <p class="lead">Esta es la lista de sus vehiculos</p>
                     <h3><a href="/vehiculos/create">¿Añadir uno nuevo?</a></h3>
-                    <hr>
+
+                    <table class="table">
+                    <tr>
+                      <td><strong>Nombre</strong></td>
+                      <td><strong>Acción</strong></td>
+                    </tr>
                     @foreach($vehiculos as $vehiculo)
                     @can('ver-vehiculos', $vehiculo)
-                    <h3>{{ $vehiculo->placa }} ({{ ($vehiculo->marca) }})</h3>
-                    <p>
-                        <a href="{{ route('vehiculos.show', $vehiculo->id) }}" class="btn btn-info">Ver vehículo</a>
-                        <a href="{{ route('vehiculos.edit', $vehiculo->id) }}" class="btn btn-primary">Editar vehículo</a>
-                        <a href="{{ route('vehiculos.showMantenimientos', $vehiculo->id) }}" class="btn btn-primary">Ver procesos</a>
-                    </p>
-                    <hr>
+                    <tr>
+                      <td>{{ $vehiculo->placa }} ({{ ($vehiculo->marca) }})</td>
+
+                      <td>
+                          {!! Form::open(['method' => 'DELETE','route' => ['vehiculos.destroy', $vehiculo->id]]) !!}
+                          <a href="{{ route('vehiculos.showMantenimientos', $vehiculo->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-eye-open"></span>Ver procesos</a>
+                          <a href="{{ route('vehiculos.edit', $vehiculo->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Editar</a>
+                          {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
+                          {!! Form::close() !!}
+                      </td>
+                    </tr>
                     @endcan
                     @endforeach
+                    </table>
                 </div>
             </div>
         </div>

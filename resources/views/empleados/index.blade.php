@@ -25,7 +25,7 @@
                         'method' => 'DELETE',
                         'route' => ['empleados.destroy', $empleado->id]
                         ]) !!}
-                        <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-primary">Editar</a>
+                        <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Editar</a>
                         {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                       </td>

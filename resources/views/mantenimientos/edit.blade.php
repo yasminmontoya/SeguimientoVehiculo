@@ -33,7 +33,7 @@
                     <input type="hidden" name="fase_nombre" value="{{ $mantenimiento->fase_nombre }}">
 
                     <div class="dropdown" >
-                           <select class="form-control" name="fase_estado">
+                           <select class="selectpicker" name="fase_estado">
                                 <option value="sin realizar">sin realizar</option>
                                 <option value="en curso">en curso</option>
                                 <option value="terminado">terminado</option>

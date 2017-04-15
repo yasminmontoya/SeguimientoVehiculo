@@ -22,7 +22,7 @@
                       <td>{{ $fase->nombre }}</td>
                       <td>
                         {!! Form::open(['method' => 'DELETE','route' => ['fases.destroy', $fase->id]])!!}
-                        <a href="{{ route('fases.edit', $fase->id) }}" class="btn btn-primary">Editar </a>
+                        <a href="{{ route('fases.edit', $fase->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Editar </a>
                           {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                           {!! Form::close() !!}
 

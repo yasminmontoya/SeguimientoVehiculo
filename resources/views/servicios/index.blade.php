@@ -21,8 +21,8 @@
 
                       <td>
                           {!! Form::open(['method' => 'DELETE','route' => ['servicios.destroy', $servicio->id]])!!}
-                          <a href="{{ route('servicios.edit', $servicio->id) }}" class="btn btn-primary">Editar </a>
-                          <a href="{{ route('fases.index', $servicio->id ) }}" class="btn btn-warning">Ver Servicios </a>
+                          <a href="{{ route('fases.index', $servicio->id ) }}" class="btn btn-warning"><span class="glyphicon glyphicon-eye-open"></span> Ver servicios</a>
+                          <a href="{{ route('servicios.edit', $servicio->id) }}" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Editar</a>
                           {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                           {!! Form::close() !!}
                       </td>

@@ -45,6 +45,7 @@
                         <input type="hidden" name="fase_id" value="">
                         <input type="hidden" name="servicio_id" value="">
 
+                        <a href="{{ route('vehiculos.index') }}" class="btn btn-info">Volver</a>
                         {!! Form::submit('Crear', ['class' => 'btn btn-primary']) !!}
                         {!! Form::close() !!}
                 </div>
