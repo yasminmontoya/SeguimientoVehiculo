@@ -22,3 +22,6 @@ Route::get('vehiculos/{id}',    'api\VehiculoController@listOne');
 Route::post('vehiculos',        'api\VehiculoController@create');
 Route::put('vehiculos/{id}',    'api\VehiculoController@update');
 Route::delete('vehiculos/{id}', 'api\VehiculoController@delete');
+
+Route::get('mantenimientos',         'api\MantenimientoController@listAll');
+Route::get('mantenimientos/{id}',    'api\MantenimientoController@listOne');
