@@ -26,7 +26,8 @@
                     <input type="hidden" name="fase_id" value="{{ $mantenimiento->fase_id }}">
 
                     <div class="form-group">
-                        {!! Form::label('fase_nombre', $mantenimiento->fase_nombre, ['class' => 'control-label']) !!}
+                        <h3>Servicio</h3>
+                        <label>{{$mantenimiento->fase_nombre}}</label>
                     </div>
 
 
