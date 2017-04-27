@@ -25,3 +25,6 @@ Route::delete('vehiculos/{id}', 'api\VehiculoController@delete');
 
 Route::get('mantenimientos',         'api\MantenimientoController@listAll');
 Route::get('mantenimientos/{id}',    'api\MantenimientoController@listOne');
+
+Route::get('fases',         'api\FaseController@listAll');
+Route::get('fases/{id}',    'api\FaseController@listOne');
