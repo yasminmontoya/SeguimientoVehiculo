@@ -1,0 +1,10 @@
+Login Administrador
+correo: admin@gmail.com
+contraseña: admin
+
+Login Empleado
+correo: empleado@gmail.com
+contraseña: empleado
+
+Login usuario
+Se pueden crear nuevos usuarios en el register
