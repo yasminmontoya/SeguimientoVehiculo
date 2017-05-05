@@ -12,7 +12,7 @@ return [
      */
     'supportsCredentials' => false,
     'allowedOrigins' => ['*'],
-    'allowedHeaders' => ['Content-Type','application/json'],
+    'allowedHeaders' => ['*'],
     'allowedMethods' => ['*'],
     'exposedHeaders' => [],
     'maxAge' => 0,
