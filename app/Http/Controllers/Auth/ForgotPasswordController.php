@@ -30,16 +30,5 @@ class ForgotPasswordController extends Controller
     {
         $this->middleware('guest');
     }
-    
-    
 
-    /**
-     * Get the broker to be used during password reset.
-     *
-     * @return PasswordBroker
-     */
-    protected function broker()
-    {
-        return Password::broker('name');
-    }
 }

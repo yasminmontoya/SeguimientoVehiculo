@@ -39,23 +39,5 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
-    
-   
-
-    protected function guard()
-    {
-        return Auth::guard('api');
-    }
-    
-    /**
-     * Get the broker to be used during password reset.
-     *
-     * @return PasswordBroker
-     */
-    protected function broker()
-    {
-        return Password::broker('name');
-    }
-
 
 }
