@@ -13,10 +13,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::get('vehiculos',         'api\VehiculoController@listAll');
 Route::get('vehiculos/{id}',    'api\VehiculoController@listOne');
 Route::post('vehiculos',        'api\VehiculoController@create');
@@ -28,3 +24,9 @@ Route::get('mantenimientos/{id}',    'api\MantenimientoController@listOne');
 
 Route::get('fases',         'api\FaseController@listAll');
 Route::get('fases/{id}',    'api\FaseController@listOne');
+
+Route::get('usuarios',                 'api\UsuarioController@listAll');
+Route::get('usuarios/{id}',            'api\UsuarioController@listOne');
+Route::post('usuarios',                'api\UsuarioController@create');
+Route::put('usuarios/{id}/contraseña', 'api\UsuarioController@update');
+Route::post('usuarios/{id}',           'api\UsuarioController@delete');
