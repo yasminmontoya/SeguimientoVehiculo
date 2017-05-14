@@ -20,11 +20,7 @@ class CreateVehiculosTable extends Migration
             $table->string('marca',100);
             $table->string('linea',100);
             $table->integer('modelo')->unsigned();
-            $table->integer('fase_id')->nullable();
-            $table->integer('servicio_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('fase_id')->references('id')->on('fases');
-            $table->foreign('servicio_id')->references('id')->on('servicios');
             $table->timestamps();
         });
     }
