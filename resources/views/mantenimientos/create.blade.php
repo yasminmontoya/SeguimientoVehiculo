@@ -21,7 +21,7 @@
                         {!! Form::open(['route' => 'mantenimientos.store']) !!}
 
                         <div class="form-group">
-                            <select class="selectpicker" id="servicio_id" name="servicio_id">
+                            <select class="selectpicker" id="servicio_id">
                                 <option value="">Seleccione el área</option>
                                 @foreach($servicios as $servicio)
                                 <option value="{{$servicio->id}}">{{$servicio->nombre}}</option>
@@ -34,6 +34,8 @@
                                 <option value="">Seleccione el área primero</option>
                             </select>
                         </div>
+
+                        <input type="hidden" name="estado" value="sin realizar">
 
                         <input type="hidden" name="vehiculo_id" value="{{ $vehiculo->id}}">
 

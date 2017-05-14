@@ -24,11 +24,14 @@
                     ]) !!}
 
                     <input type="hidden" name="fase_id" value="{{ $mantenimiento->fase_id }}">
-
+                    @foreach($fases as $fase)
+                    @if($mantenimiento->fase_id == $fase->id)
                     <div class="form-group">
                         <h3>Servicio</h3>
-                        <label>{{$mantenimiento->fase_nombre}}</label>
+                        <label>{{$fase->nombre}}</label>
                     </div>
+                    @endif
+                    @endforeach
 
                     <div class="dropdown" >
                            <select class="selectpicker" name="estado">

@@ -30,6 +30,7 @@ class MantenimientoController extends Controller
     {
         $this->validate($request, [
             'fase_id'       => 'required | integer',
+            'estado'   => 'required | string | in:terminado,en curso,sin realizar',
             'vehiculo_id'   => 'required | integer',
         ]);
 
@@ -48,7 +49,9 @@ class MantenimientoController extends Controller
 
         $mantenimientos = Mantenimiento::all();
 
-        return view('mantenimientos.index',['mantenimientos' => $mantenimientos])->withVehiculo($vehiculo);
+        $fases = Fase::all();
+
+        return view('mantenimientos.index',['mantenimientos' => $mantenimientos],['fases' => $fases])->withVehiculo($vehiculo);
 
     }
 
@@ -58,7 +61,9 @@ class MantenimientoController extends Controller
         {
             $mantenimiento = Mantenimiento::findOrFail($id);
 
-            return view('mantenimientos.edit')->withMantenimiento($mantenimiento);
+            $fases = Fase::all();
+
+            return view('mantenimientos.edit',['fases' => $fases])->withMantenimiento($mantenimiento);
         }
             catch(ModelNotFoundException $e)
         {
@@ -76,6 +81,7 @@ class MantenimientoController extends Controller
 
         $this->validate($request, [
             'fase_id'       => 'required | integer',
+            'estado'        => 'required | string | in:terminado,en curso,sin realizar',
             'vehiculo_id'   => 'required | integer',
         ]);
 

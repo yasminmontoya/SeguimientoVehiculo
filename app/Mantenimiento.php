@@ -8,6 +8,6 @@ class Mantenimiento extends Model
 {
     protected $fillable = [
 
-        'fase_nombre','fase_estado','vehiculo_id',
+        'fase_id','estado','vehiculo_id',
     ];
 }
