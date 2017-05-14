@@ -8,6 +8,7 @@ use Session;
 use App\Http\Controllers\Gate;
 use App\User;
 use App\Mantenimiento;
+use App\Fase;
 
 class VehiculoController extends Controller
 {
@@ -138,7 +139,9 @@ class VehiculoController extends Controller
 
             $mantenimientos = Mantenimiento::all();
 
-            return view('vehiculos.showMantenimientos',['mantenimientos' => $mantenimientos])->withVehiculo($vehiculo);
+            $fases = Fase::all();
+
+            return view('vehiculos.showMantenimientos',['mantenimientos' => $mantenimientos],['fases' => $fases])->withVehiculo($vehiculo);
         }
             catch(ModelNotFoundException $e)
         {

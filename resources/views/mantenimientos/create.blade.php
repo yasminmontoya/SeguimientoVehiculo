@@ -30,13 +30,10 @@
                         </div>
 
                         <div class="form-group">
-                            <select class="selectpicker" id="fase_id" name="fase_nombre">
+                            <select class="selectpicker" id="fase_id" name="fase_id">
                                 <option value="">Seleccione el área primero</option>
                             </select>
                         </div>
-
-
-                        <input type="hidden" name="fase_estado" value="sin realizar">
 
                         <input type="hidden" name="vehiculo_id" value="{{ $vehiculo->id}}">
 
@@ -55,11 +52,10 @@
 <script>
 $(document).ready(function(){
     $('#servicio_id').on('change',function(){
-        console.log($(this).val());
         $.get("{{ url('dropdown')}}",{ option: $(this).val() },function(data) {
             $('#fase_id').empty();
             $.each(data, function(index, faseObj) {
-                $('#fase_id').append("<option value='" + faseObj.nombre + "'>" + faseObj.nombre + "</option>");
+                $('#fase_id').append("<option value='" + faseObj.id + "'>" + faseObj.nombre + "</option>");
             });
         });
     });

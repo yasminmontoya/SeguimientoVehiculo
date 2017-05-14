@@ -29,8 +29,7 @@ class MantenimientoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'fase_nombre'   => 'required | string | max:60',
-            'fase_estado'   => 'required | string | in:terminado,en curso,sin realizar',
+            'fase_id'       => 'required | integer',
             'vehiculo_id'   => 'required | integer',
         ]);
 
@@ -76,8 +75,7 @@ class MantenimientoController extends Controller
         $mantenimiento = Mantenimiento::findOrFail($id);
 
         $this->validate($request, [
-            'fase_nombre'   => 'required | string | max:60',
-            'fase_estado'   => 'required | string | in:terminado,en curso,sin realizar',
+            'fase_id'       => 'required | integer',
             'vehiculo_id'   => 'required | integer',
         ]);
 

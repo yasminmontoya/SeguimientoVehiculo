@@ -17,10 +17,14 @@
                     </tr>
                     @foreach($mantenimientos as $mantenimiento)
                     @if($mantenimiento->vehiculo_id == $vehiculo->id)
+                    @foreach($fases as $fase)
+                    @if($mantenimiento->fase_id == $fase->id)
                     <tr>
-                      <td>{{ $mantenimiento->fase_nombre }}</td>
-                      <td>{{ $mantenimiento->fase_estado }}</td>
+                      <td>{{ $fase->nombre }}</td>
+                      <td>{{ $mantenimiento->estado }}</td>
                     </tr>
+                    @endif
+                    @endforeach
                     @endif
                     @endforeach
                     </table>

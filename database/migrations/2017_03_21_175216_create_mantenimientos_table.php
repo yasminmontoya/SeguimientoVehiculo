@@ -15,11 +15,10 @@ class CreateMantenimientosTable extends Migration
     {
         Schema::create('mantenimientos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('fase_nombre');
-            $table->enum('fase_estado', ['terminado', 'en curso', 'sin realizar'])->default("sin realizar");
+            $table->integer('fase_id');
+            $table->enum('estado', ['terminado', 'en curso', 'sin realizar'])->default("sin realizar");
             $table->integer('vehiculo_id');
-            $table->foreign('fase_nombre')->references('nombre')->on('fases');
-            $table->foreign('fase_estado')->references('estado')->on('fases');
+            $table->foreign('fase_id')->references('id')->on('fases');
             $table->foreign('vehiculo_id')->references('id')->on('vehiculos');
             $table->timestamps();
         });

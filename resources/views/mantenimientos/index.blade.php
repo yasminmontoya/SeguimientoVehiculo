@@ -20,9 +20,11 @@
                     </tr>
                     @foreach($mantenimientos as $mantenimiento)
                     @if($mantenimiento->vehiculo_id == $vehiculo->id)
+                    @foreach($fases as $fase)
+                    @if($mantenimiento->fase_id == $fase->id)
                     <tr>
-                      <td>{{ $mantenimiento->fase_nombre }}</td>
-                      <td>{{ $mantenimiento->fase_estado }}</td>
+                      <td>{{ $fase->nombre }}</td>
+                      <td>{{ $mantenimiento->estado }}</td>
                       <td>
                           {!! Form::open(['method' => 'DELETE','route' => ['mantenimientos.destroy', $mantenimiento->id]]) !!}
                           <a href="{{ route('mantenimientos.edit', $mantenimiento->id ) }}" class="btn btn-primary"><span class="glyphicon glyphicon-edit"></span> Editar </a>
@@ -30,6 +32,8 @@
                           {!! Form::close() !!}
                       </td>
                     </tr>
+                    @endif
+                    @endforeach
                     @endif
                     @endforeach
                     </table>
