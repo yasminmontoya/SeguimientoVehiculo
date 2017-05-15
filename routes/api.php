@@ -25,8 +25,8 @@ Route::get('mantenimientos/{id}',    'api\MantenimientoController@listOne');
 Route::get('fases',         'api\FaseController@listAll');
 Route::get('fases/{id}',    'api\FaseController@listOne');
 
-Route::get('usuarios',                 'api\UsuarioController@listAll');
-Route::get('usuarios/{id}',            'api\UsuarioController@listOne');
-Route::post('usuarios',                'api\UsuarioController@create');
-Route::put('usuarios/{id}/contraseña', 'api\UsuarioController@update');
-Route::post('usuarios/{id}',           'api\UsuarioController@delete');
+Route::get('usuarios',         'api\UsuarioController@listAll');
+Route::get('usuarios/{id}',    'api\UsuarioController@listOne');
+Route::post('usuarios',        'api\UsuarioController@create');
+Route::put('usuarios/{id}',    'api\UsuarioController@update');
+Route::delete('usuarios/{id}', 'api\UsuarioController@delete');

@@ -47,11 +47,14 @@ class UsuarioController extends Controller
     public function create(Request $request)
     {
 
-        $input = $request->all();
-
       try
       {
-        $response = User::create($input);
+        $response = User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+        ]);
+
         $statusCode = 200;  // OK
       }
       catch (QueryException $e)
@@ -74,9 +77,11 @@ class UsuarioController extends Controller
         return response()->json(null, 404);  // Not Found
       }
 
-      $input = $request->all();
-
-      $response = $usuario->fill($input);
+      $response = $usuario->fill([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => bcrypt($request['password']),
+        ])->save();
 
       try
       {
