@@ -30,3 +30,5 @@ Route::get('usuarios/{id}',    'api\UsuarioController@listOne');
 Route::post('usuarios',        'api\UsuarioController@create');
 Route::put('usuarios/{id}',    'api\UsuarioController@update');
 Route::delete('usuarios/{id}', 'api\UsuarioController@delete');
+
+Route::post('administradores', 'api\AdminController@create');
