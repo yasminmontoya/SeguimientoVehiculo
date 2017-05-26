@@ -19,10 +19,25 @@
                     @if($mantenimiento->vehiculo_id == $vehiculo->id)
                     @foreach($fases as $fase)
                     @if($mantenimiento->fase_id == $fase->id)
-                    <tr>
+                    @if($mantenimiento->estado == 'terminado')
+                    <tr class="table-success">
                       <td>{{ $fase->nombre }}</td>
                       <td>{{ $mantenimiento->estado }}</td>
                     </tr>
+                        @endif
+                        @if($mantenimiento->estado == 'en curso')
+                        <tr  class="table-info">
+                      <td>{{ $fase->nombre }}</td>
+                      <td>{{ $mantenimiento->estado }}</td>
+                    </tr>
+                        @endif
+                        @if($mantenimiento->estado == 'sin realizar')
+                        <tr  class="table-warning">
+                      <td>{{ $fase->nombre }}</td>
+                      <td>{{ $mantenimiento->estado }}</td>
+                    </tr>
+                        @endif
+
                     @endif
                     @endforeach
                     @endif

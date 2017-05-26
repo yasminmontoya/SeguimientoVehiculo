@@ -14,9 +14,10 @@ class CreateFasesTable extends Migration
     public function up()
     {
         Schema::create('fases', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre',60);
-            $table->unsignedInteger('servicio_id')->nullable();
+            $table->integer('servicio_id')->unsigned()->nullable();
             $table->foreign('servicio_id')->references('id')->on('servicios')->onDelete('set null');
             $table->timestamps();
         });
