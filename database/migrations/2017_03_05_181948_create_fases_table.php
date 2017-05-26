@@ -16,7 +16,7 @@ class CreateFasesTable extends Migration
         Schema::create('fases', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',60);
-            $table->unsignedInteger('servicio_id');
+            $table->unsignedInteger('servicio_id')->nullable();
             $table->foreign('servicio_id')->references('id')->on('servicios')->onDelete('set null');
             $table->timestamps();
         });
