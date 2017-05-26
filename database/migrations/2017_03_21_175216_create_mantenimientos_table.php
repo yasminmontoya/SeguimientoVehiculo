@@ -18,8 +18,8 @@ class CreateMantenimientosTable extends Migration
             $table->integer('fase_id');
             $table->enum('estado', ['terminado', 'en curso', 'sin realizar'])->default("sin realizar");
             $table->integer('vehiculo_id');
-            $table->foreign('fase_id')->references('id')->on('fases');
-            $table->foreign('vehiculo_id')->references('id')->on('vehiculos');
+            $table->foreign('fase_id')->references('id')->on('fases')->onDelete('set null');
+            $table->foreign('vehiculo_id')->references('id')->on('vehiculos')->onDelete('set null');
             $table->timestamps();
         });
     }

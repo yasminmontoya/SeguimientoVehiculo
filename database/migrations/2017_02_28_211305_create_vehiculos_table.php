@@ -20,7 +20,7 @@ class CreateVehiculosTable extends Migration
             $table->string('marca',100);
             $table->string('linea',100);
             $table->integer('modelo')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->timestamps();
         });
     }

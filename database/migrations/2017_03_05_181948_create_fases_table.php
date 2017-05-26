@@ -17,7 +17,7 @@ class CreateFasesTable extends Migration
             $table->increments('id');
             $table->string('nombre',60);
             $table->unsignedInteger('servicio_id');
-            $table->foreign('servicio_id')->references('id')->on('servicios');
+            $table->foreign('servicio_id')->references('id')->on('servicios')->onDelete('set null');
             $table->timestamps();
         });
     }
