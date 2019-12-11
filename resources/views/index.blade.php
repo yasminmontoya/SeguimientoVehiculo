@@ -267,7 +267,7 @@
                     <div class="footer-col col-md-4">
                         <h3>Creadores</h3>
                         <p>Yasmin Montoya
-                            <br>Santiago Sossa</p>
+                            <br>Harold Velesquez</p>
                     </div>
                 </div>
             </div>
@@ -276,7 +276,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2017
+                        Copyright &copy; Your Website 2019
                     </div>
                 </div>
             </div>
